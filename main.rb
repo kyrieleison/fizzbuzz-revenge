@@ -1,3 +1,5 @@
 require './lib/fizzbuzz.rb'
+require './lib/fizzbuzz_recorder.rb'
 
-Fizzbuzz.run
+recorder = FizzbuzzRecorder.new
+Fizzbuzz.run(recorder)
