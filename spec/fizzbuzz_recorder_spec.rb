@@ -1,22 +1,22 @@
 require 'fizzbuzz_recorder'
 
 describe FizzbuzzRecorder do
-  context 'Fizzbuzzが1回実施された場合' do
-    it do
-      recorder = FizzbuzzRecorder.new
-      recorder.add(input: '3', output: 'Fizz')
-      records = recorder.all
-      expect(records).to eq([{ input: '3', output: 'Fizz' }])
+  describe '.add' do
+    context 'Fizzbuzzが1回実施された場合' do
+      it do
+        recorder = FizzbuzzRecorder.new
+        recorder.add(input: '3', output: 'Fizz')
+        expect(recorder.all).to eq([{ input: '3', output: 'Fizz' }])
+      end
     end
-  end
 
-  context 'Fizzbuzzが2回実施された場合' do
-    it do
-      recorder = FizzbuzzRecorder.new
-      recorder.add(input: '3', output: 'Fizz')
-      recorder.add(input: '5', output: 'Buzz')
-      records = recorder.all
-      expect(records).to eq([{ input: '3', output: 'Fizz' }, { input: '5', output: 'Buzz' }])
+    context 'Fizzbuzzが2回実施された場合' do
+      it do
+        recorder = FizzbuzzRecorder.new
+        recorder.add(input: '3', output: 'Fizz')
+        recorder.add(input: '5', output: 'Buzz')
+        expect(recorder.all).to eq([{ input: '3', output: 'Fizz' }, { input: '5', output: 'Buzz' }])
+      end
     end
   end
 end
