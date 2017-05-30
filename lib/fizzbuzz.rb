@@ -19,7 +19,7 @@ class Fizzbuzz
     private
 
     def output_for_integer(integer)
-      if integer % 3 === 0 && integer % 5 === 0
+      if integer % 15 === 0
         return 'FizzBuzz'
       elsif integer % 3 === 0
         return 'Fizz'
