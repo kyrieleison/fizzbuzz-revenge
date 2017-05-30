@@ -19,4 +19,21 @@ describe FizzbuzzRecorder do
       end
     end
   end
+
+  describe '.save' do
+    let(:path) { './path/to/file' }
+    let(:output) { $buffer.string }
+
+    before do
+      $buffer = StringIO.new
+      allow(File).to receive(:open).with(path, 'w').and_yield($buffer)
+    end
+
+    it do
+      recorder = FizzbuzzRecorder.new
+      recorder.add(input: '3', output: 'Fizz')
+      recorder.save(path)
+      expect(output).to eq('input: 3, output: Fizz')
+    end
+  end
 end

@@ -12,4 +12,12 @@ class FizzbuzzRecorder
   def all
     records
   end
+
+  def save(path)
+    File.open(path, 'w') do |f|
+      records.map do |r|
+        f.write("input: #{r[:input]}, output: #{r[:output]}")
+      end
+    end
+  end
 end
