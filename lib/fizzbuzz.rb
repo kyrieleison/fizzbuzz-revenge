@@ -6,7 +6,7 @@ class Fizzbuzz
       input = gets.chomp
 
       if input =~ /\A[1-9][0-9]*\z/
-        output = output_for_integer(input)
+        output = output_for_integer(input.to_i)
       else
         output = output_for_not_integer
       end
@@ -19,12 +19,14 @@ class Fizzbuzz
     private
 
     def output_for_integer(integer)
-      if integer.to_i % 3 === 0
+      if integer % 3 === 0 && integer % 5 === 0
+        return 'FizzBuzz'
+      elsif integer % 3 === 0
         return 'Fizz'
-      elsif integer.to_i % 5 === 0
+      elsif integer % 5 === 0
         return 'Buzz'
       else
-        return integer
+        return integer.to_s
       end
     end
 

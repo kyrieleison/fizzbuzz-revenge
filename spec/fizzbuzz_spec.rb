@@ -38,6 +38,16 @@ describe Fizzbuzz do
       end
     end
 
+    context '15の倍数の場合' do
+      let(:input) { '15' }
+
+      it do
+        subject
+        expect(output).to eq("整数を入力してください\nFizzBuzz\n")
+        expect(recorder).to have_received(:add).with(input: '15', output: 'FizzBuzz')
+      end
+    end
+
     context 'それ以外の整数の場合' do
       let(:input) { '1' }
 
