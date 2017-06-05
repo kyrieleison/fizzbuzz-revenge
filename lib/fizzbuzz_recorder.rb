@@ -20,4 +20,12 @@ class FizzbuzzRecorder
       end
     end
   end
+
+  def load(path)
+    File.open(path, 'r') do |f|
+      f.each_line do |line|
+        puts line
+      end
+    end
+  end
 end
