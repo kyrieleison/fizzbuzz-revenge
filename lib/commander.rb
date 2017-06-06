@@ -1,4 +1,5 @@
 require 'fizzbuzz'
+require 'fizzbuzz_recorder'
 
 class Commander
   def self.run
@@ -6,8 +7,10 @@ class Commander
 
     input = gets.chomp
 
-    if (input == '1')
+    if input == '1'
       Fizzbuzz.run
+    else
+      FizzbuzzRecorder.all
     end
   end
 end
